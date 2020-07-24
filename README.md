@@ -1,5 +1,18 @@
 # JX
 
+KNOWN ISSUES: 
+
+1. Needs owner and/or kubeadmin privileges to deploy helm chart otherwise service account fails with
+    ``` Need namespace get permission ```
+    
+2. jx install video with helm 2 is:
+jx install --provider=gke --namespace=mihir-dev2 --gitops=false --verbose=true
+https://asciinema.org/a/8mlrieGqWYyOqJE1UyYaholyB
+
+3. not really HA active/active...
+  nfs server is mountable with two jenkins
+
+
 JX is a command line tool for installing and using [Jenkins X](https://jenkins-x.io/).
 
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/3237/badge)](https://bestpractices.coreinfrastructure.org/projects/3237)
