@@ -7,6 +7,7 @@ KNOWN ISSUES:
     
 2. jx install video with helm 2 is:
 jx install --provider=gke --namespace=mihir-dev2 --gitops=false --verbose=true
+
 https://asciinema.org/a/8mlrieGqWYyOqJE1UyYaholyB
 
 3. not really HA active/active...
