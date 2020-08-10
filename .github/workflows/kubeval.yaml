@@ -1,10 +1,16 @@
 on: push
+
+on: push
 name: Validate
 jobs:
   kubeval:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: dipshit/kubeval@1.0
+    # Runs a single command using the runners shell
+    - name: current directory
+      run: pwd
+    - name: test
+      uses: desaintmartin/helm-kubeval-action@master
       with:
-        params: './charts/jx/templates'
+        path: ./jx/charts/jx/templates
