@@ -9,11 +9,3 @@ jobs:
       uses: desaintmartin/helm-kubeval-action@master
       with:
         path: ./charts/
-
-    - name: helm directory
-      run: cd ./charts/
-
-    - name: Run chart-testing (install)
-      uses: helm/chart-testing-action@v1.0.0
-      with:
-        command: install
