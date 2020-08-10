@@ -11,7 +11,7 @@ jobs:
         path: ./charts/
 
     - name: helm directory
-      run: ./charts/
+      run: cd ./charts/
 
     - name: Run chart-testing (lint)
       id: lint
