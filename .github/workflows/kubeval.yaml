@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: test
-      uses: desaintmartin/helm-kubeval-action@master
+    - uses: dipshit/kubeval@1.0
       with:
-        path: ./jx/charts/jx
+        params: 'charts/*/*'
