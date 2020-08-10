@@ -12,12 +12,12 @@ jobs:
 
     - name: helm directory
       run: cd ./charts/
-
+    # failing lint
     - name: Run chart-testing (lint)
       id: lint
       uses: helm/chart-testing-action@v1.0.0
       with:
-        command: lint
+        command: which lint
 
     - name: Create kind cluster
       uses: helm/kind-action@v1.0.0-alpha.3
