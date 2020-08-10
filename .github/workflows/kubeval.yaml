@@ -5,10 +5,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    # Runs a single command using the runners shell
-    - name: current directory
-      run: pwd && ls -aRl 
     - name: test
       uses: desaintmartin/helm-kubeval-action@master
       with:
         path: ./charts/
+
+    - name: helm directory
+      run: ./charts/
+
+    - name: Run chart-testing (lint)
+      id: lint
+      uses: helm/chart-testing-action@v1.0.0
+      with:
+        command: lint
+
+    - name: Create kind cluster
+      uses: helm/kind-action@v1.0.0-alpha.3
+      # Only build a kind cluster if there are chart changes to test.
+      if: steps.lint.outputs.changed == 'true'
+
+    - name: Run chart-testing (install)
+      uses: helm/chart-testing-action@v1.0.0
+      with:
+        command: install
