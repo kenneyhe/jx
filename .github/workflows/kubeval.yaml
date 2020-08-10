@@ -7,8 +7,8 @@ jobs:
     - uses: actions/checkout@master
     # Runs a single command using the runners shell
     - name: current directory
-      run: pwd
+      run: pwd && ls -aRl 
     - name: test
       uses: desaintmartin/helm-kubeval-action@master
       with:
-        path: ./jx/charts/jx/templates
+        path: ./charts/jx/templates
