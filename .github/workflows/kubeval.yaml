@@ -7,4 +7,4 @@ jobs:
     - uses: actions/checkout@master
     - uses: dipshit/kubeval@1.0
       with:
-        params: 'charts/jx/templates'
+        params: './charts/jx/templates'
