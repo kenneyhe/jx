@@ -11,4 +11,4 @@ jobs:
     - name: test
       uses: desaintmartin/helm-kubeval-action@master
       with:
-        path: ./charts/jx/*
+        path: ./charts/jx/
