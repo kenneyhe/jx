@@ -26,4 +26,4 @@ jobs:
 #        export_default_credentials: true
 
     - name: deploy jx to cluster
-      run: helm upgrade --install opendistro charts/jx   
+      run: helm upgrade --install jx charts/jx   
